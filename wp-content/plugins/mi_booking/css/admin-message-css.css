@@ -1,0 +1,12 @@
+.message-map {
+    font-weight: normal;
+    padding: 10px;
+    border: 2px solid #2EB9C7;
+    border-radius: 5px;
+    color: #666;
+    text-shadow: 2px 2px 5px #A9ADA8;
+}
+
+.message-map span {
+    font-weight: bold;
+}

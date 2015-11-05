@@ -1,0 +1,348 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
+table.features-table {
+    font-family: 'Oswald', sans-serif;
+}
+.features-table
+{
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: separate;
+  border: 0;
+  border-spacing: 0;
+  text-shadow: 0 1px 0 #fff;
+  color: #797979;
+  background: #fafafa;
+  background-image: -moz-linear-gradient(top, #fff, #eaeaea, #fff);/* Firefox 3.6 */
+  background-image: -webkit-gradient(linear,center bottom,center top,from(#fff),color-stop(0.5, #eaeaea),to(#fff));
+  margin-bottom:3px;
+  font-size: 1.2em;
+} 
+.features-table td
+{
+  height: 50px;
+  padding: 0 20px;
+  border-bottom: 1px solid #cdcdcd;
+  box-shadow: 0 1px 0 white;
+  -moz-box-shadow: 0 1px 0 white;
+  -webkit-box-shadow: 0 1px 0 white;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+} 
+.features-table tbody td
+{
+  text-align: center;
+} 
+.features-table td.grey
+{
+  background: #efefef;
+  background: rgba(144,144,144,0.15);
+  border-right: 1px solid white;
+} 
+.features-table td.green
+{
+  background: #e7f3d4;
+  background: rgba(184,243,85,0.3);
+} 
+.features-table td:nowrap
+{
+  white-space: nowrap;
+} 
+.features-table thead td
+{
+  font-size: 120%;
+  font-weight: bold;
+} 
+.features-table tfoot td
+{
+  font-size: 120%; 
+  font-weight: bold;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom: 1px solid #dadada;
+}
+.features-table thead tr {
+    background: #2980b9;
+    color: #fff;
+}
+.features-table thead td {
+    text-shadow: 1px 1px 2px #000;
+    padding: 5px 20px;
+    line-height: 110%;
+}
+.features-table tbody tr:nth-child(2n) {
+    background: #E6E9EA;
+}
+.features-table tbody td {
+    font-weight: 600;
+}
+.features-table tbody tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+.features-table button[type=submit] {
+    border: 0;
+    outline: 0;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    padding: 10px 20px;
+    border-left: solid 1px #2ab7ec;
+    margin-left: 35px;    
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.features-table button[type=submit]::before {
+    font: normal 16px/1 'dashicons';
+    background-color: #2561b4;
+    width: 35px;
+    max-height: 29px;
+    height: 100%;
+    position: absolute;
+    display: block;
+    padding-top: 8px;
+    padding-bottom: 30px;
+    top: 0px;
+    left: -36px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #8fd1ea;
+    text-shadow: 1px 1px 0px #07526e;
+    border-right: solid 1px #07526e;
+    background-image: linear-gradient(bottom, rgb(10,94,125) 0%, rgb(14,139,184) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(10,94,125) 0%, rgb(14,139,184) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(10,94,125) 0%, rgb(14,139,184) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(10,94,125) 0%, rgb(14,139,184) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(10,94,125) 0%, rgb(14,139,184) 100%);
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(10,94,125)), color-stop(1, rgb(14,139,184)) );
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #032b3a, 0px 10px 5px #999;
+    -moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #032b3a, 0px 10px 5px #999;
+    -o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #032b3a, 0px 10px 5px #999;
+    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #032b3a, 0px 10px 5px #999;
+}
+.features-table button[type=submit]:active {
+    top: 3px;
+}
+.features-table button[type=submit]:active::before {
+    top: -3px;
+    -webkit-box-shadow: inset 0px 1px 0px rgba(42,183,236,0.5), 0px 5px 0px 0px #032b3a, 1px 1px 0px 0px #044a64, 2px 2px 0px 0px rgba(4, 74, 100, 0.5), 2px 5px 0px 0px rgba(4, 74, 100, 0.5), 6px 4px 2px rgba(11,105,139,0.5), 0px 10px 5px #999;
+    -moz-box-shadow: inset 0px 1px 0px rgba(42,183,236,0.5), 0px 5px 0px 0px #032b3a, 1px 1px 0px 0px #044a64, 2px 2px 0px 0px rgba(4, 74, 100, 0.5), 2px 5px 0px 0px rgba(4, 74, 100, 0.5), 6px 4px 2px rgba(11,105,139,0.5), 0px 10px 5px #999;
+    -o-box-shadow: inset 0px 1px 0px rgba(42,183,236,0.5), 0px 5px 0px 0px #032b3a, 1px 1px 0px 0px #044a64, 2px 2px 0px 0px rgba(4, 74, 100, 0.5), 2px 5px 0px 0px rgba(4, 74, 100, 0.5), 6px 4px 2px rgba(11,105,139,0.5), 0px 10px 5px #999;
+    box-shadow: inset 0px 1px 0px rgba(42,183,236,0.5), 0px 5px 0px 0px #032b3a, 1px 1px 0px 0px #044a64, 2px 2px 0px 0px rgba(4, 74, 100, 0.5), 2px 5px 0px 0px rgba(4, 74, 100, 0.5), 6px 4px 2px rgba(11,105,139,0.5), 0px 10px 5px #999;
+}
+.features-table .status_confirm {
+    background-color: #2EAD1E;
+    background-image: linear-gradient(bottom, rgb(20, 119, 32) 0%, rgb(30, 202, 78) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(20, 119, 32) 0%, rgb(30, 202, 78) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(20, 119, 32) 0%, rgb(30, 202, 78) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(20, 119, 32) 0%, rgb(30, 202, 78) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(20, 119, 32) 0%, rgb(30, 202, 78) 100%);
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(20, 119, 32)), color-stop(1, rgb(30, 202, 78)) );
+    -webkit-box-shadow: inset 0px 1px 0px #47C337, 0px 5px 0px 0px #0E4810, 0px 10px 5px #999;
+    -moz-box-shadow: inset 0px 1px 0px #47C337, 0px 5px 0px 0px #0E4810, 0px 10px 5px #999;
+    -o-box-shadow: inset 0px 1px 0px #47C337, 0px 5px 0px 0px #0E4810, 0px 10px 5px #999;
+    box-shadow: inset 0px 1px 0px #47C337, 0px 5px 0px 0px #0E4810, 0px 10px 5px #999;
+}
+.features-table .status_confirm:active {
+    background-image: linear-gradient(bottom, rgb(20, 119, 32) 0%, rgb(30, 202, 78) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(20, 119, 32) 0%, rgb(30, 202, 78) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(20, 119, 32) 0%, rgb(30, 202, 78) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(20, 119, 32) 0%, rgb(30, 202, 78) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(20, 119, 32) 0%, rgb(30, 202, 78) 100%);
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(20, 119, 32)), color-stop(1, rgb(30, 202, 78)) );
+    -webkit-box-shadow: inset 0px 1px 0px #47C337, 0px 2px 0px 0px #0E4810, 0px 5px 3px #999;
+    -moz-box-shadow: inset 0px 1px 0px #47C337, 0px 2px 0px 0px #0E4810, 0px 5px 3px #999;
+    -o-box-shadow: inset 0px 1px 0px #47C337, 0px 2px 0px 0px #0E4810, 0px 5px 3px #999;
+    box-shadow: inset 0px 1px 0px #47C337, 0px 2px 0px 0px #0E4810, 0px 5px 3px #999;
+}
+.features-table .status_confirm::before {
+    content: "\f147";
+}
+.features-table .status_cancel {
+    background-color: #3bb3e0;
+    background-image: linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(44,160,202)), color-stop(1, rgb(62,184,229)) );
+    -webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+    -moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+    -o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #156785, 0px 10px 5px #999;
+}
+.features-table .status_cancel:active {
+    background-image: linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(62,184,229) 0%, rgb(44,160,202) 100%);
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(62,184,229)), color-stop(1, rgb(44,160,202)) );
+    -webkit-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
+    -moz-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
+    -o-box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
+    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #156785, 0px 5px 3px #999;
+}
+.features-table .status_cancel::before {
+    content: "\f159";
+}
+.features-table .status_delete {
+    background-color: #E22822;
+    background-image: linear-gradient(bottom, rgb(148, 52, 24) 0%, rgb(243, 154, 108) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(148, 52, 24) 0%, rgb(243, 154, 108) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(148, 52, 24) 0%, rgb(243, 154, 108) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(148, 52, 24) 0%, rgb(243, 154, 108) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(148, 52, 24) 0%, rgb(243, 154, 108) 100%);
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(148, 52, 24)), color-stop(1, rgb(243, 154, 108)) );
+    -webkit-box-shadow: inset 0px 1px 0px #FF9792, 0px 5px 0px 0px #4A0808, 0px 10px 5px #999;
+    -moz-box-shadow: inset 0px 1px 0px #FF9792, 0px 5px 0px 0px #4A0808, 0px 10px 5px #999;
+    -o-box-shadow: inset 0px 1px 0px #FF9792, 0px 5px 0px 0px #4A0808, 0px 10px 5px #999;
+    box-shadow: inset 0px 1px 0px #FF9792, 0px 5px 0px 0px #4A0808, 0px 10px 5px #999;
+}
+.features-table .status_delete:active {
+    background-image: linear-gradient(bottom, rgb(148, 52, 24) 0%, rgb(243, 154, 108) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(148, 52, 24) 0%, rgb(243, 154, 108) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(148, 52, 24) 0%, rgb(243, 154, 108) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(148, 52, 24) 0%, rgb(243, 154, 108) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(148, 52, 24) 0%, rgb(243, 154, 108) 100%);
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(148, 52, 24)), color-stop(1, rgb(243, 154, 108)) );
+    -webkit-box-shadow: inset 0px 1px 0px #FF9792, 0px 2px 0px 0px #4A0808, 0px 5px 3px #999;
+    -moz-box-shadow: inset 0px 1px 0px #FF9792, 0px 2px 0px 0px #4A0808, 0px 5px 3px #999;
+    -o-box-shadow: inset 0px 1px 0px #FF9792, 0px 2px 0px 0px #4A0808, 0px 5px 3px #999;
+}   
+.features-table .status_delete::before {
+    content: "\f153";
+}
+.title_not_confirm {
+    color: #1E889A;
+}
+.title_confirm {
+    color: #2EAD1E;
+}
+.title_cancel {
+    color: #E22822;
+}
+.table-break {
+    overflow-wrap: break-word;  /* не поддерживает IE, Firefox; является копией word-wrap */ 
+    word-wrap: break-word;
+    word-break: break-all;  /* не поддерживает Opera12.14, значение keep-all не поддерживается IE, Chrome */ 
+    line-break: loose;  /* нет поддержки для русского языка */ 
+    hyphens: manual; 
+}
+.features-table .dash-control h2{
+    padding: 0;
+    margin: 5px 0;
+}
+.panel-heading div.pull-right {
+  margin-top: -30px;
+  font-size: 15px;
+}
+.panel-body {
+  display: none;
+}
+#mi_booking_sortable-pbToolbar.row {
+    margin: 0;
+    display:none;
+}
+#mi_booking_sortable-pbToolbar .col-lg-12 {
+    padding: 15px;
+}
+#mi_booking_sortable-pbToolbar {
+    width: 100%;
+}
+#mi_booking_sortable-pbToolbar .input-group {
+    width: 100%;
+}
+.dashboard #pagination-row {
+    text-align: center;
+}
+.dashboard .pagination a {
+    margin: 5px;
+}
+.dashboard h2 {
+    font-family: 'Oswald', sans-serif;
+    text-shadow: 1px 1px 2px #868792;
+}
+.dashboard span.filter {
+    margin: 0;
+    cursor: pointer;
+}
+.donate-inline {
+    display: inline-block;
+}
+.donate-inline input {
+    opacity: 0.8;
+}
+.donate-inline input:hover {
+    opacity: 1;
+}
+.donate-inline input:focus {
+    outline: 0;
+}
+select#room-change {
+    height: 34px;
+}
+.room-change select, .room-change button {
+    margin-bottom: 5px;
+}
+.room-change {
+    margin-top: 5px;
+}
+#room-change {
+    width: 100%;
+}
+.room-change .col-md-8 {
+    padding: 0;
+    padding-right: 10px;
+}
+.room-change .col-md-2 {
+    padding: 0;    
+}
+.row {
+    clear: both;
+}
+#mi_booking_sortable thead td {
+    padding: 10px;
+}
+.room-change:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+/*------------RESPONSIVE------------*/
+@media screen and (min-width:1025px) {
+    table.features-table td {
+        display: table-cell;
+    }
+}
+@media screen and (max-width:1024px) {
+    table.features-table td {
+        display: block;
+        height: auto;
+        border: 0;
+        padding: 5px;
+        box-shadow: 0 0;
+    }
+    #room-change {
+        width: 100%;
+    }
+}

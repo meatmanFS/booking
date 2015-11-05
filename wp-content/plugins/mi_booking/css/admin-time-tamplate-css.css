@@ -1,0 +1,118 @@
+select#room-change {
+    height: 34px;
+    width: 100%;
+}
+.form-inline .col-md-8,.form-inline .col-md-4 {
+    padding: 0;
+    padding-right: 10px;
+    margin-bottom: 5px;
+}
+.room-change {
+    margin-top: 10px;
+}
+table.time-tamplate-table input[type="time"] {
+    line-height: normal;
+}
+.time-holiday {
+    margin: 10px 0;
+}
+.time-tamplate-table thead tr {
+    color: #fff;
+    background: #74AF74;
+    text-shadow: 0px 0px 6px #0A0A0A;
+}
+
+.time-tamplate-table tbody tr {
+    background: #E6E6E6;
+}
+
+.time-tamplate-table tbody tr:nth-child(even) {
+    background: #DEE1E4;
+}
+
+table.time-tamplate-table {
+    text-align: center;
+}
+.time-tamplate-table .form-inline button,.time-tamplate-table .form-inline input {
+    margin-bottom: 5px;
+}
+span.problem {
+    color: red;
+}
+.time-tamplate-table .form-inline {
+    position: relative;
+    top: -5px;
+}
+.message-map {
+    font-weight: normal;
+    padding: 10px;
+    border: 2px solid #2EB9C7;
+    border-radius: 5px;
+    color: #666;
+    text-shadow: 2px 2px 5px #A9ADA8;
+}
+
+.message-map span {
+    font-weight: bold;
+}
+.message-map p {
+    padding: 5px;
+    margin: 0;
+}
+.add-time-tamplates-inputs, .add-date-tamplate-inputs{
+    display: none;
+    background: #F1F7EE;
+    margin: 10px 10px 10px 0;
+    border: #5CB85C solid 4px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.add-new-btn-inline>div {
+    display: inline-block;
+}
+.message-notice {
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    border: #BFB54D solid 2px;
+    text-shadow: 0 0 7px #000000;
+}
+.room-change .col-md-2 {
+    padding: 0;
+}
+.time-holiday input, .time-holiday button {
+    margin-bottom: 5px;
+}
+.time-tamplate-table input.what_day_input {
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+}
+.time-tamplate-table input.time_input {
+    width: 100px;
+    margin: 0 auto;
+}
+input.form-control.cost_input {
+    width: 120px;
+}
+.add-time-tamplates, .add-date-tamplate {
+    margin-bottom: 5px;
+}
+.time-holiday .container {
+    margin: 0;
+    display: inline-block;
+    top: 8px;
+}
+@media screen and (max-width:996px) {
+    table.time-tamplate-table {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 782px) {
+    .form-table .time-tamplate-table td {
+        padding: 10px;
+    }
+    .form-table .time-tamplate-table input {
+        text-align: center;
+    }
+}
