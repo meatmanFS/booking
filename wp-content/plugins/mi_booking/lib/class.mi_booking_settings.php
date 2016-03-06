@@ -5,9 +5,6 @@ defined( 'ABSPATH' ) or die( '<h3>No access to the file!</h3>' );
 if (!class_exists('MI_Booking_Settings'))
 {
     class MI_Booking_Settings extends MI_Booking {
-        public $room_name;
-        public $disp_days;
-        public $show_city;
         public function __construct() {
             parent::__construct();
             $this->plugin_settings();            
@@ -35,11 +32,11 @@ if (!class_exists('MI_Booking_Settings'))
             add_settings_section('mi_booking_message_id', '', '', 'mi_booking_message');
             $customer_message_map = 
                 '<br><br><div class="message-map bg-info">'.__('To add data, use', 'mi_booking').': <br>
-                '.__('Name of customer', 'mi_booking').':<br> <span>[name_of_customer]</span><br>
-                '.__('What is booked', 'mi_booking').':<br> <span>[what_booked]</span><br>
-                '.__('Date, time', 'mi_booking').':<br><span>[order_date]</span> , <span>[order_time]</span> <br>
-                '.__('City', 'mi_booking').':<br><span>[order_city]</span> <br>
-                '.__('Phone', 'mi_booking').':<br><span>[phone]</span> <br>
+                '.__('Name of customer', 'mi_booking').':<br> <span>-name_of_customer-</span><br>
+                '.__('What is booked', 'mi_booking').':<br> <span>-what_booked-</span><br>
+                '.__('Date, time', 'mi_booking').':<br><span>-order_date-</span> , <span>-order_time-</span> <br>
+                '.__('City', 'mi_booking').':<br><span>-order_city-</span> <br>
+                '.__('Phone', 'mi_booking').':<br><span>-phone-</span> <br>
                 '.__('Use the character square brackets at the beginning and the end.', 'mi_booking').'</div>';
             add_settings_field('mi_booking_message_customer', __('Emails to customer'.$customer_message_map, 'mi_booking'), array($this, 'customer_message'), 'mi_booking_message', 'mi_booking_message_id');
             add_settings_field('success_booking', __('Successful booking message', 'mi_booking'), array($this, 'success_booking'), 'mi_booking_message', 'mi_booking_message_id');
@@ -196,17 +193,6 @@ if (!class_exists('MI_Booking_Settings'))
         }
         /*-----End save all settings--------*/
         /*-----------Room settings----------*/
-        public function room_selected_name() {
-            foreach ($this->rooms as $room)
-            {
-                if ($room->id == $this->room)
-                {
-                    $this->room_name = $room->name_of_room;
-                    $this->disp_days = $room->number_of_days;
-                    $this->show_city = $room->show_town;
-                }
-            }
-        }
         public function display_room_change_name() {
             $this->room_selected_name();
             ?>

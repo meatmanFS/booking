@@ -13,7 +13,10 @@ if (!class_exists('MI_Booking'))
         public $room;
         public $rooms;
         public $mi_booking;
-        
+        public $room_name;
+        public $disp_days;
+        public $show_city;
+		
         public function __construct() {
             global $wpdb;
             $this->booking_table_base           = $wpdb->prefix.'booking_table';
@@ -25,8 +28,14 @@ if (!class_exists('MI_Booking'))
             $this->mi_booking = get_option('mi_booking');
             $this->room = $this->mi_booking['room_selected'];
             $this->rooms = $wpdb->get_results('SELECT * FROM '.$this->table_of_rooms.';' );
+			$this->room_selected_name();
         }
-        public function init() {
+		public function init() {
+			if( !is_admin() ){
+				$this->front_booking();
+			}
+		}
+        public function admin_init() {
             global $wpdb;
             /*-------------handle dashboard------------*/
             $dash_control = filter_input(INPUT_POST, 'dash_control', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -43,45 +52,45 @@ if (!class_exists('MI_Booking'))
                     if(isset($status_confirm))
                     {
                         $confirm = $wpdb->update
-			(
-                                $this->booking_table_base."__".$this->room,
-				array(
-                                    'status_verification'   => __('Booking confirmed', 'mi_booking'),
-                                    'verification'          => 2,
-                                ),
-				array('id' => $booking_id),
-				array('%s', '%d'),
-				array('%d')
-			);
+						(
+                            $this->booking_table_base."__".$this->room,
+							array(
+												'status_verification'   => __('Booking confirmed', 'mi_booking'),
+												'verification'          => 2,
+											),
+							array('id' => $booking_id),
+							array('%s', '%d'),
+							array('%d')
+						);
                         if($confirm)
                         {
                             $this->send_user_email(array(
                                 'email'     => $booking_e_mail,
                                 'subject'   => $this->mi_booking['subject_confirm'],
                                 'message'   => $this->mi_booking['tamplate_confirmation']
-                            ));
+                            ), $booking_id);
                         }
                     }
                     if(isset($status_cancel))
                     {
                         $cancel = $wpdb->update
-			(
+							(
                                 $this->booking_table_base."__".$this->room,
-				array(
+								array(
                                     'status_verification'   => __('Booking canceled', 'mi_booking'),
                                     'verification'          => 3,
                                 ),
-				array('id' => $booking_id),
-				array('%s', '%d'),
-				array('%d')
-			);
+								array('id' => $booking_id),
+								array('%s', '%d'),
+								array('%d')
+							);
                         if($cancel)
                         {
                             $this->send_user_email(array(
                                 'email'     => $booking_e_mail,
                                 'subject'   => $this->mi_booking['subject_cancel_delete'],
                                 'message'   => $this->mi_booking['tamplate_cancel']
-                            ));
+                            ), $booking_id);
                         }
                     }
                     if(isset($status_delete))
@@ -253,11 +262,16 @@ if (!class_exists('MI_Booking'))
                 $this->mi_update();
             }
         }
-        public function send_user_email($set) {
+        public function send_user_email( $set, $id = false ) {
+			
+			if( $id !== false ){
+				$set['message'] = $this->parse_message( $set['message'], $id );
+			}
+			
             $headers = 
-                'From: '.$this->mi_booking['booking_email']."\r\n".
-		'Reply-To: '.$this->mi_booking['booking_email'].'' . "\r\n" .
-		'X-Mailer: PHP/' . phpversion();		
+            'From: '.$this->mi_booking['booking_email']."\r\n".
+			'Reply-To: '.$this->mi_booking['booking_email'].'' . "\r\n" .
+			'X-Mailer: PHP/' . phpversion();		
             $wp_mail = wp_mail($set['email'], $set['subject'], $set['message'], $headers);            
             if(!$wp_mail)
             {
@@ -266,7 +280,48 @@ if (!class_exists('MI_Booking'))
             }
             return $wp_mail;
         }
+		public function parse_message( $message, $id ) {
+			$message_parts = explode('-', $message );
+			$data = $this->get_single_data( $this->booking_table_base . '__' . $this->room , $id );
+			$parsed_message = '';
+			foreach ( $message_parts as $item ){
+				switch ( $item )
+				{
+					case 'name_of_customer': $parsed_message .= $data->name_of_customer; break;
+					case 'what_booked': $parsed_message .= $data->what_order; break;
+					case 'order_date': $parsed_message .= $data->date_order; break;
+					case 'order_time':  $parsed_message .= $data->time_order; break;
+					case 'order_city':
+						if ( $this->disp_days == "1" ){
+							$parsed_message .= $data->city_order;
+						}
+					break;
+					case 'phone': $parsed_message .= $item->phone; break;
+
+					default: $parsed_message .= $item;
+				}
+			}
+			return $parsed_message;
+		}
+		public function get_single_data( $from, $where ) {
+			global $wpdb;
+			$data = $wpdb->get_results("SELECT * FROM $from WHERE id = $where ");
+			return array_shift( $data ); 
+		}
+		public function room_selected_name() {
+            foreach ($this->rooms as $room)
+            {
+                if ($room->id == $this->room)
+                {
+                    $this->room_name = $room->name_of_room;
+                    $this->disp_days = $room->number_of_days;
+                    $this->show_city = $room->show_town;
+                }
+            }
+        }
         public function room_selected_update($ID) {
+			$this->room = $ID;
+			$this->room_selected_name();
             $this->mi_booking['room_selected'] = $ID;
             $this->mi_update();
         }
@@ -346,6 +401,10 @@ if (!class_exists('MI_Booking'))
             $wpdb->query("DROP TABLE IF EXISTS `".$this->booking_time_base.'__'.$room_id."`;");
             $wpdb->query("DROP TABLE IF EXISTS `".$this->booking_time_tamplate_base.'__'.$room_id."`;");
         }
+		public function front_booking() {
+			include_once('class.mi_booking_front.php');
+            new MI_Booking_Front();
+		}
         public function textdomain() {
             load_plugin_textdomain( 'mi_booking', false, MI_Booking_DIR.'/lang/' ); 
         }
@@ -367,4 +426,3 @@ if (!class_exists('MI_Booking'))
         }
     }
 }
-
