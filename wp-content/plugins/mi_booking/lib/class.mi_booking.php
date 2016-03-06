@@ -59,6 +59,7 @@ if (!class_exists('MI_Booking'))
 						);
                         if($confirm)
                         {
+							$this->unlock_booking( $booking_id, 1 );
                             $this->send_user_email(array(
                                 'email'     => $booking_e_mail,
                                 'subject'   => $this->mi_booking['subject_confirm'],
@@ -81,6 +82,7 @@ if (!class_exists('MI_Booking'))
 							);
                         if($cancel)
                         {
+							$this->unlock_booking( $booking_id );
                             $this->send_user_email(array(
                                 'email'     => $booking_e_mail,
                                 'subject'   => $this->mi_booking['subject_cancel_delete'],
@@ -90,6 +92,7 @@ if (!class_exists('MI_Booking'))
                     }
                     if(isset($status_delete))
                     {
+						$this->unlock_booking( $booking_id );
                         $wpdb->query("DELETE FROM ".$this->booking_table_base."__$this->room WHERE id = $booking_id");
                     }
                 }
@@ -257,6 +260,31 @@ if (!class_exists('MI_Booking'))
                 $this->mi_update();
             }
         }
+		public function unlock_booking( $id, $available = 0 ) {
+			global $wpdb;
+			$canseled_booking = $this->get_single_data( $this->booking_table_base."__".$this->room, $id );
+			$room = $this->get_room();
+			$free_booking = $wpdb->get_results( "SELECT * FROM {$this->booking_time_base}__$room WHERE day = '{$canseled_booking->date_order}' && time = '{$canseled_booking->time_order}';" );
+			$free_booking = array_shift( $free_booking );
+			$wpdb->update (
+				$this->booking_time_base."__".$room,
+				array(
+					'available'   => $available,
+				),
+				array('id' => $free_booking->id),
+				array('%d'),
+				array('%d')
+			);
+		}
+		public function get_room() {
+			if( !empty( $this->room ) ){
+				return $this->room;
+			} else {
+				$this->mi_booking = get_option('mi_booking');
+	            $this->room = $this->mi_booking['room_selected'];
+				return $this->room;
+			}
+		}
         public function send_user_email( $set, $id = false ) {
 			
 			if( $id !== false ){
