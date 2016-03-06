@@ -17,6 +17,12 @@ define('MI_Booking_URL', plugin_dir_url( __FILE__ ) );
 include_once('lib/class.mi_booking.php');
 $mi_booking = new MI_Booking();
 
+add_action( 'plugins_loaded', array($mi_booking, 'textdomain'));
+add_action('init', array($mi_booking, 'init'));
+add_action('admin_init', array($mi_booking, 'admin_init'));
+add_action('admin_init', array($mi_booking, 'plugin_settings'));
+add_action('admin_menu' , array($mi_booking, 'admin_menu'));
+
 register_activation_hook(__FILE__, array('MI_Booking', 'install'));
 register_deactivation_hook(__FILE__, array('MI_Booking', 'uninstall'));
 //register_uninstall_hook(__FILE__, array('MI_Booking', 'uninstall'));

@@ -5,8 +5,13 @@ defined( 'ABSPATH' ) or die( '<h3>No access to the file!</h3>' );
 if (!class_exists('MI_Booking_Settings'))
 {
     class MI_Booking_Settings extends MI_Booking {
+		public $room_name;
+        public $disp_days;
+        public $show_city;
+		public $rooms;
         public function __construct() {
             parent::__construct();
+			$this->rooms = $wpdb->get_results('SELECT * FROM '.$this->table_of_rooms.';' );
             $this->plugin_settings();            
         }
         public function plugin_settings(){ 
@@ -193,6 +198,17 @@ if (!class_exists('MI_Booking_Settings'))
         }
         /*-----End save all settings--------*/
         /*-----------Room settings----------*/
+		public function room_selected_name() {
+            foreach ($this->rooms as $room)
+            {
+                if ($room->id == $this->room)
+                {
+                    $this->room_name = $room->name_of_room;
+                    $this->disp_days = $room->number_of_days;
+                    $this->show_city = $room->show_town;
+                }
+            }
+        }
         public function display_room_change_name() {
             $this->room_selected_name();
             ?>

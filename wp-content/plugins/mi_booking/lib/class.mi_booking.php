@@ -27,8 +27,6 @@ if (!class_exists('MI_Booking'))
             
             $this->mi_booking = get_option('mi_booking');
             $this->room = $this->mi_booking['room_selected'];
-            $this->rooms = $wpdb->get_results('SELECT * FROM '.$this->table_of_rooms.';' );
-			$this->room_selected_name();
         }
 		public function init() {
 			if( !is_admin() ){
@@ -292,7 +290,8 @@ if (!class_exists('MI_Booking'))
 					case 'order_date': $parsed_message .= $data->date_order; break;
 					case 'order_time':  $parsed_message .= $data->time_order; break;
 					case 'order_city':
-						if ( $this->disp_days == "1" ){
+						$rooms = $this->get_single_data( $this->table_of_rooms , $this->room );
+						if ( $rooms->disp_days == "1" ){
 							$parsed_message .= $data->city_order;
 						}
 					break;
@@ -308,17 +307,7 @@ if (!class_exists('MI_Booking'))
 			$data = $wpdb->get_results("SELECT * FROM $from WHERE id = $where ");
 			return array_shift( $data ); 
 		}
-		public function room_selected_name() {
-            foreach ($this->rooms as $room)
-            {
-                if ($room->id == $this->room)
-                {
-                    $this->room_name = $room->name_of_room;
-                    $this->disp_days = $room->number_of_days;
-                    $this->show_city = $room->show_town;
-                }
-            }
-        }
+		
         public function room_selected_update($ID) {
 			$this->room = $ID;
 			$this->room_selected_name();
