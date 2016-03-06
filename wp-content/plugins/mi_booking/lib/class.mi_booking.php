@@ -11,11 +11,6 @@ if (!class_exists('MI_Booking'))
         public $table_of_rooms;
         public $table_of_holidays;
         public $room;
-        public $rooms;
-        public $mi_booking;
-        public $room_name;
-        public $disp_days;
-        public $show_city;
 		
         public function __construct() {
             global $wpdb;
@@ -31,6 +26,8 @@ if (!class_exists('MI_Booking'))
 		public function init() {
 			if( !is_admin() ){
 				$this->front_booking();
+			} else {
+				$this->admin_init();
 			}
 		}
         public function admin_init() {
@@ -291,11 +288,11 @@ if (!class_exists('MI_Booking'))
 					case 'order_time':  $parsed_message .= $data->time_order; break;
 					case 'order_city':
 						$rooms = $this->get_single_data( $this->table_of_rooms , $this->room );
-						if ( $rooms->disp_days == "1" ){
+						if ( $rooms->show_town == "1" ){
 							$parsed_message .= $data->city_order;
 						}
 					break;
-					case 'phone': $parsed_message .= $item->phone; break;
+					case 'phone': $parsed_message .= $data->phone; break;
 
 					default: $parsed_message .= $item;
 				}
@@ -309,8 +306,6 @@ if (!class_exists('MI_Booking'))
 		}
 		
         public function room_selected_update($ID) {
-			$this->room = $ID;
-			$this->room_selected_name();
             $this->mi_booking['room_selected'] = $ID;
             $this->mi_update();
         }

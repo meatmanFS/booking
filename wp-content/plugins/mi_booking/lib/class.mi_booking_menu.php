@@ -7,6 +7,8 @@ if (!class_exists('MI_Booking_Menu'))
     class MI_Booking_Menu extends MI_Booking {        
         public function __construct() {
             parent::__construct();
+			global $wpdb;
+			$this->rooms = $wpdb->get_results('SELECT * FROM '.$this->table_of_rooms.';' );
             $this->admin_menu();
         }
         public function admin_menu() {
@@ -258,7 +260,7 @@ if (!class_exists('MI_Booking_Menu'))
                 }
                 else
                 {
-                    if($this->mi_booking['delete_status'])
+                    if( !empty( $this->mi_booking['delete_status'] ) )
                     {
                         ?>
                             <div id="message" class="updated" style="margin: 5px 0 2px;">

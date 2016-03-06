@@ -19,7 +19,6 @@ $mi_booking = new MI_Booking();
 
 add_action( 'plugins_loaded', array($mi_booking, 'textdomain'));
 add_action('init', array($mi_booking, 'init'));
-add_action('admin_init', array($mi_booking, 'admin_init'));
 add_action('admin_init', array($mi_booking, 'plugin_settings'));
 add_action('admin_menu' , array($mi_booking, 'admin_menu'));
 
