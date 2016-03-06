@@ -11,6 +11,7 @@ if (!class_exists('MI_Booking_Settings'))
 		public $rooms;
         public function __construct() {
             parent::__construct();
+			global $wpdb;
 			$this->rooms = $wpdb->get_results('SELECT * FROM '.$this->table_of_rooms.';' );
             $this->plugin_settings();            
         }
