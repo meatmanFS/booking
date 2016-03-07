@@ -13,6 +13,7 @@ defined( 'ABSPATH' ) or die( '<h3>No access to the file!</h3>' );
 
 define('MI_Booking_DIR', plugin_dir_path( __FILE__));
 define('MI_Booking_URL', plugin_dir_url( __FILE__ ) );
+define('MI_Booking_DIRNAME', basename( dirname( __FILE__ ) ) );
 
 include_once('lib/class.mi_booking.php');
 $mi_booking = new MI_Booking();

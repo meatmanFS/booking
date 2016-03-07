@@ -31,7 +31,7 @@ if (!class_exists('MI_Booking_Settings'))
                 <p>'.__('Friday', 'mi_booking').': <span class="pull-right">F</span></p>
                 <p>'.__('Weekend', 'mi_booking').': <span class="pull-right">WE</span></p>
                 <p>'.__('Holidays', 'mi_booking').': <span class="pull-right">H</span></p>';
-            add_settings_field('time_table_cost',  __('Setting a time table and the cost'.$time_tamplate_map, 'mi_booking'), array($this, 'time_table_cost'), 'mi_booking_time_template', 'mi_booking_time_template_id');
+            add_settings_field('time_table_cost',  __('Setting a time table and the cost', 'mi_booking').$time_tamplate_map, array($this, 'time_table_cost'), 'mi_booking_time_template', 'mi_booking_time_template_id');
             add_settings_field('holidays',  __('Setting holidays', 'mi_booking'), array($this, 'time_holiday'), 'mi_booking_time_template', 'mi_booking_time_template_id');
             /*------------Room message-------------*/
             register_setting('mi_booking_message', 'mi_booking_message', array($this, 'save_message'));
@@ -43,8 +43,8 @@ if (!class_exists('MI_Booking_Settings'))
                 '.__('Date, time', 'mi_booking').':<br><span>-order_date-</span> , <span>-order_time-</span> <br>
                 '.__('City', 'mi_booking').':<br><span>-order_city-</span> <br>
                 '.__('Phone', 'mi_booking').':<br><span>-phone-</span> <br>
-                '.__('Use the character square brackets at the beginning and the end.', 'mi_booking').'</div>';
-            add_settings_field('mi_booking_message_customer', __('Emails to customer'.$customer_message_map, 'mi_booking'), array($this, 'customer_message'), 'mi_booking_message', 'mi_booking_message_id');
+                '.__('Use the character "-" at the beginning and the end.', 'mi_booking').'</div>';
+            add_settings_field('mi_booking_message_customer', __('Messages to customer', 'mi_booking').$customer_message_map, array($this, 'customer_message'), 'mi_booking_message', 'mi_booking_message_id');
             add_settings_field('success_booking', __('Successful booking message', 'mi_booking'), array($this, 'success_booking'), 'mi_booking_message', 'mi_booking_message_id');
             add_settings_field('invalid_email', __('Invalid email message', 'mi_booking'), array($this, 'invalid_email'), 'mi_booking_message', 'mi_booking_message_id');
             add_settings_field('invalid_phone', __('Invalid phone message', 'mi_booking'), array($this, 'invalid_phone'), 'mi_booking_message', 'mi_booking_message_id');
@@ -307,7 +307,7 @@ if (!class_exists('MI_Booking_Settings'))
         /*----End time table settings-------*/
         /*----------Message settings--------*/
         public function customer_message() {
-            echo '<h4>The message template when booking confirmed.</h4>';
+            echo '<h4>'. __('The message template when booking confirmed.', 'mi_booking') .'</h4>';
             wp_editor( 
                 $this->mi_booking['tamplate_confirmation'],
                 'mi_booking_message_confirm' , 
@@ -316,7 +316,7 @@ if (!class_exists('MI_Booking_Settings'))
                     'textarea_rows' => 6,
                     )
             );
-            echo '<br><h4>The message template when booking canceled.</h4>';
+			echo '<h4>'. __('The message template when booking canceled.', 'mi_booking') .'</h4>';
             wp_editor( 
                 $this->mi_booking['tamplate_cancel'], 
                 'mi_booking_message_cancel', 

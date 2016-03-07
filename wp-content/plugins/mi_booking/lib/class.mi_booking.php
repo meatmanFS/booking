@@ -418,7 +418,7 @@ if (!class_exists('MI_Booking'))
             new MI_Booking_Front();
 		}
         public function textdomain() {
-            load_plugin_textdomain( 'mi_booking', false, MI_Booking_DIR.'/lang/' ); 
+            load_plugin_textdomain( 'mi_booking', false, MI_Booking_DIRNAME.'/lang' ); 
         }
         public function admin_menu() {
             include_once('class.mi_booking_menu.php');

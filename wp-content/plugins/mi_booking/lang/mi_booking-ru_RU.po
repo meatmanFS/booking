@@ -1,0 +1,702 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MI Booking\n"
+"POT-Creation-Date: 2016-03-07 21:13+0200\n"
+"PO-Revision-Date: 2016-03-07 21:14+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: lib/class.mi_booking.php:53
+msgid "Booking confirmed"
+msgstr "Бронирование подтверждено"
+
+#: lib/class.mi_booking.php:76
+msgid "Booking canceled"
+msgstr "Бронирование отменено"
+
+#: lib/class.mi_booking.php:127
+msgid "Room insert error!"
+msgstr "Ошибка вставки комнаты!"
+
+#: lib/class.mi_booking.php:133
+msgid "Some empty Room name or Display days values!"
+msgstr "Пустые значения имени комнаты или числа отображаемых дней!"
+
+#: lib/class.mi_booking.php:190
+msgid "Insert error!"
+msgstr "Ошибка вставки!"
+
+#: lib/class.mi_booking.php:196 lib/class.mi_booking_settings.php:140
+msgid "Time template already exist!"
+msgstr "Шаблон времени уже существует!"
+
+#: lib/class.mi_booking.php:203 lib/class.mi_booking_settings.php:147
+msgid "Some not valid cost, time or description values!"
+msgstr "Проверьте введенные значения стоимость, времени или описания!"
+
+#: lib/class.mi_booking.php:229
+msgid "Holiday template insert error!"
+msgstr "Ошибка вставки шаблона праздников!"
+
+#: lib/class.mi_booking.php:235
+msgid "Holiday template already exist!"
+msgstr "Шаблон праздников уже существует!"
+
+#: lib/class.mi_booking.php:242
+msgid "Not valid date value!"
+msgstr "Не верное значение даты!"
+
+#: lib/class.mi_booking.php:377 lib/class.mi_booking_install.php:51
+msgid "Booking not confirmed"
+msgstr "Бронирование не подтверждено "
+
+#: lib/class.mi_booking_front.php:316
+msgid "Rooms does not exist!"
+msgstr "Комнаты не существует!"
+
+#: lib/class.mi_booking_front.php:326 lib/class.mi_booking_front.php:365
+#: lib/class.mi_booking_menu.php:202
+msgid "January"
+msgstr "Январь"
+
+#: lib/class.mi_booking_front.php:329 lib/class.mi_booking_front.php:368
+msgid "Ferbruary"
+msgstr "Февраль"
+
+#: lib/class.mi_booking_front.php:332 lib/class.mi_booking_front.php:371
+msgid "Manrch"
+msgstr "Март"
+
+#: lib/class.mi_booking_front.php:335 lib/class.mi_booking_front.php:374
+#: lib/class.mi_booking_menu.php:205
+msgid "April"
+msgstr "Апрель"
+
+#: lib/class.mi_booking_front.php:338 lib/class.mi_booking_front.php:377
+#: lib/class.mi_booking_menu.php:206 lib/class.mi_booking_menu.php:220
+msgid "May"
+msgstr "Май"
+
+#: lib/class.mi_booking_front.php:341 lib/class.mi_booking_front.php:380
+#: lib/class.mi_booking_menu.php:207
+msgid "June"
+msgstr "Июнь"
+
+#: lib/class.mi_booking_front.php:344 lib/class.mi_booking_front.php:383
+#: lib/class.mi_booking_menu.php:208
+msgid "July"
+msgstr "Июль"
+
+#: lib/class.mi_booking_front.php:347 lib/class.mi_booking_front.php:386
+#: lib/class.mi_booking_menu.php:209
+msgid "August"
+msgstr "Август"
+
+#: lib/class.mi_booking_front.php:350 lib/class.mi_booking_front.php:389
+#: lib/class.mi_booking_menu.php:210
+msgid "September"
+msgstr "Сентябрь"
+
+#: lib/class.mi_booking_front.php:353 lib/class.mi_booking_front.php:392
+#: lib/class.mi_booking_menu.php:211
+msgid "October"
+msgstr "Октябрь"
+
+#: lib/class.mi_booking_front.php:356 lib/class.mi_booking_front.php:395
+#: lib/class.mi_booking_menu.php:212
+msgid "November"
+msgstr "Ноябрь"
+
+#: lib/class.mi_booking_front.php:359 lib/class.mi_booking_front.php:398
+msgid "Devember"
+msgstr "Декабрь"
+
+#: lib/class.mi_booking_front.php:407 lib/class.mi_booking_menu.php:173
+msgid "Monday"
+msgstr "Понедельник"
+
+#: lib/class.mi_booking_front.php:408 lib/class.mi_booking_menu.php:174
+msgid "Tuesday"
+msgstr "Вторник"
+
+#: lib/class.mi_booking_front.php:409 lib/class.mi_booking_menu.php:175
+msgid "Wednesday"
+msgstr "Среда"
+
+#: lib/class.mi_booking_front.php:410 lib/class.mi_booking_menu.php:176
+msgid "Thursday"
+msgstr "Четверг "
+
+#: lib/class.mi_booking_front.php:411 lib/class.mi_booking_menu.php:177
+#: lib/class.mi_booking_settings.php:31
+msgid "Friday"
+msgstr "Пятница"
+
+#: lib/class.mi_booking_front.php:412 lib/class.mi_booking_menu.php:178
+msgid "Saturday"
+msgstr "Суббота "
+
+#: lib/class.mi_booking_front.php:413 lib/class.mi_booking_menu.php:172
+#: lib/class.mi_booking_menu.php:179
+msgid "Sunday"
+msgstr "Воскресенье"
+
+#: lib/class.mi_booking_front.php:528 lib/class.mi_booking_front.php:578
+#: lib/class.mi_booking_menu.php:389
+msgid "Name"
+msgstr "Имя"
+
+#: lib/class.mi_booking_front.php:529
+msgid "Email"
+msgstr "И-мейл"
+
+#: lib/class.mi_booking_front.php:530 lib/class.mi_booking_front.php:582
+#: lib/class.mi_booking_menu.php:87 lib/class.mi_booking_settings.php:45
+msgid "Phone"
+msgstr "Телефон"
+
+#: lib/class.mi_booking_front.php:531 lib/class.mi_booking_front.php:591
+#: lib/class.mi_booking_menu.php:84 lib/class.mi_booking_settings.php:44
+msgid "City"
+msgstr "Город"
+
+#: lib/class.mi_booking_front.php:532 lib/class.mi_booking_front.php:596
+msgid "Ordered"
+msgstr "Заказано"
+
+#: lib/class.mi_booking_front.php:532
+msgid "on"
+msgstr "на"
+
+#: lib/class.mi_booking_front.php:532
+msgid "in"
+msgstr "в"
+
+#: lib/class.mi_booking_front.php:535
+msgid "Booking on site"
+msgstr "Бронирование на сайте"
+
+#: lib/class.mi_booking_front.php:564
+msgid "Close"
+msgstr "Закрыть"
+
+#: lib/class.mi_booking_front.php:570 lib/class.mi_booking_menu.php:82
+msgid "Date"
+msgstr "Дата"
+
+#: lib/class.mi_booking_front.php:574
+msgid "Picked date"
+msgstr "Выбранная дата "
+
+#: lib/class.mi_booking_front.php:586
+msgid "Е-mail"
+msgstr "И-мейл"
+
+#: lib/class.mi_booking_front.php:601
+msgid "Book"
+msgstr "Бронировать"
+
+#: lib/class.mi_booking_install.php:130
+msgid "Room 1"
+msgstr "Комната 1"
+
+#: lib/class.mi_booking_install.php:146
+msgid ""
+"Dear -name_of_customer-, our team has confirmed the booking of -what_booked- "
+"by You, on -order_date- in -order_time- o'clock. Also You indicated -"
+"order_city-, phone -phone-. If any details are incorrect, please contact the "
+"Us."
+msgstr ""
+"Уважаемый -name_of_customer-, наша команда подтверждает бронирование -"
+"what_booked- Вами, на -order_date- в -order_time- часов. Также Вы указали -"
+"order_city-, телефон -phone-. Если какие-то детали указаны не правильно, "
+"пожалуйста свяжитесь с нами."
+
+#: lib/class.mi_booking_install.php:147
+msgid ""
+"Dear -name_of_customer-, our team has cancel the booking of -what_booked- , "
+"on -order_date- in -order_time- o'clock"
+msgstr ""
+"Уважаемый -name_of_customer-, мы отменили бронирование -what_booked- , на -"
+"order_date- в -order_time- часов"
+
+#: lib/class.mi_booking_install.php:148
+msgid ""
+"Your order is accepted. We will contact You within 2 hours. Thank you for "
+"your interest to our company!"
+msgstr ""
+"Ваш заказ принят. Мы свяжемся с Вами на протяжении 2 часов. Спасибо за "
+"интерес к нашей компании!"
+
+#: lib/class.mi_booking_install.php:149
+msgid "Please enter the e-mail address, so We can contact You."
+msgstr "Пожалуйста, введите и-мейл, чтобы Мы могли с Вами связаться."
+
+#: lib/class.mi_booking_install.php:150
+msgid ""
+"Please enter your phone number with country code at the beginning and 10 "
+"digits,so We can contact You."
+msgstr ""
+"Пожалуйста, введите телефонный номер с кодом страны и 10 цифрами номера, "
+"чтоб Мы могли связаться с Вами."
+
+#: lib/class.mi_booking_menu.php:16 lib/class.mi_booking_menu.php:34
+msgid "Dashboard"
+msgstr "Консоль"
+
+#: lib/class.mi_booking_menu.php:16
+msgid "Booking"
+msgstr "Бронирование"
+
+#: lib/class.mi_booking_menu.php:19
+msgid "Room settings"
+msgstr "Настройки комнаты"
+
+#: lib/class.mi_booking_menu.php:22
+msgid "Time template"
+msgstr "Шаблон времени "
+
+#: lib/class.mi_booking_menu.php:25
+msgid "Message settings"
+msgstr "Настройка сообщений"
+
+#: lib/class.mi_booking_menu.php:36
+msgid "Give $thank you!"
+msgstr "Дать $пасибо!"
+
+#: lib/class.mi_booking_menu.php:40
+msgid "Donate me!"
+msgstr "Пожертвовать!"
+
+#: lib/class.mi_booking_menu.php:43
+msgid "PayPal - The safer, easier way to pay online!"
+msgstr "PayPal - Безопаснее, легче платить онлайн!"
+
+#: lib/class.mi_booking_menu.php:66 lib/class.mi_booking_menu.php:420
+#: lib/class.mi_booking_menu.php:522
+msgid "Change"
+msgstr "Изменить"
+
+#: lib/class.mi_booking_menu.php:72
+msgid "Toggle table filter"
+msgstr "Изменить фильтр таблицы"
+
+#: lib/class.mi_booking_menu.php:80
+msgid "ID"
+msgstr "ИД"
+
+#: lib/class.mi_booking_menu.php:81 lib/class.mi_booking_settings.php:41
+msgid "Name of customer"
+msgstr "Имя заказчика"
+
+#: lib/class.mi_booking_menu.php:83 lib/class.mi_booking_settings.php:250
+msgid "Time"
+msgstr "Время"
+
+#: lib/class.mi_booking_menu.php:85 lib/class.mi_booking_settings.php:42
+msgid "What is booked"
+msgstr "Что забронировано"
+
+#: lib/class.mi_booking_menu.php:86
+msgid "E-mail"
+msgstr "И-мейл"
+
+#: lib/class.mi_booking_menu.php:88
+msgid "Status verification"
+msgstr "Статус"
+
+#: lib/class.mi_booking_menu.php:115
+msgid "Confirm"
+msgstr "Подтвердить"
+
+#: lib/class.mi_booking_menu.php:116
+msgid "Cancel"
+msgstr "Отменить"
+
+#: lib/class.mi_booking_menu.php:117 lib/class.mi_booking_menu.php:421
+#: lib/class.mi_booking_settings.php:272 lib/class.mi_booking_settings.php:302
+msgid "Delete"
+msgstr "Удалить"
+
+#: lib/class.mi_booking_menu.php:129
+msgid "Filter Orders"
+msgstr "Фильтровать заказы"
+
+#: lib/class.mi_booking_menu.php:130
+msgid "No results found"
+msgstr "Ничего не найдено"
+
+#: lib/class.mi_booking_menu.php:182 lib/class.mi_booking_menu.php:189
+msgid "Sun"
+msgstr "Нед"
+
+#: lib/class.mi_booking_menu.php:183
+msgid "Mon"
+msgstr "Пон"
+
+#: lib/class.mi_booking_menu.php:184
+msgid "Tue"
+msgstr "Вто"
+
+#: lib/class.mi_booking_menu.php:185
+msgid "Wed"
+msgstr "Сре"
+
+#: lib/class.mi_booking_menu.php:186
+msgid "Thu"
+msgstr "Чет"
+
+#: lib/class.mi_booking_menu.php:187
+msgid "Fri"
+msgstr "Пят"
+
+#: lib/class.mi_booking_menu.php:188
+msgid "Sat"
+msgstr "Суб"
+
+#: lib/class.mi_booking_menu.php:192 lib/class.mi_booking_menu.php:199
+msgid "Su"
+msgstr "Нд"
+
+#: lib/class.mi_booking_menu.php:193
+msgid "Mo"
+msgstr "Пн"
+
+#: lib/class.mi_booking_menu.php:194
+msgid "Tu"
+msgstr "Вт"
+
+#: lib/class.mi_booking_menu.php:195
+msgid "We"
+msgstr "Ср"
+
+#: lib/class.mi_booking_menu.php:196
+msgid "Th"
+msgstr "Чт"
+
+#: lib/class.mi_booking_menu.php:197
+msgid "Fr"
+msgstr "Пн"
+
+#: lib/class.mi_booking_menu.php:198
+msgid "Sa"
+msgstr "Су"
+
+#: lib/class.mi_booking_menu.php:203
+msgid "February"
+msgstr "Февраль"
+
+#: lib/class.mi_booking_menu.php:204
+msgid "March"
+msgstr "Март"
+
+#: lib/class.mi_booking_menu.php:213
+msgid "December"
+msgstr "Декабрь"
+
+#: lib/class.mi_booking_menu.php:216
+msgid "Jan"
+msgstr "Янв"
+
+#: lib/class.mi_booking_menu.php:217
+msgid "Feb"
+msgstr "Фев"
+
+#: lib/class.mi_booking_menu.php:218
+msgid "Mar"
+msgstr "Мар"
+
+#: lib/class.mi_booking_menu.php:219
+msgid "Apr"
+msgstr "Апр"
+
+#: lib/class.mi_booking_menu.php:221
+msgid "Jun"
+msgstr "Июн"
+
+#: lib/class.mi_booking_menu.php:222
+msgid "Jul"
+msgstr "Июл"
+
+#: lib/class.mi_booking_menu.php:223
+msgid "Aug"
+msgstr "Авг"
+
+#: lib/class.mi_booking_menu.php:224
+msgid "Sep"
+msgstr "Сент"
+
+#: lib/class.mi_booking_menu.php:225
+msgid "Oct"
+msgstr "Окт"
+
+#: lib/class.mi_booking_menu.php:226
+msgid "Nov"
+msgstr "Ноя"
+
+#: lib/class.mi_booking_menu.php:227
+msgid "Dec"
+msgstr "Дек"
+
+#: lib/class.mi_booking_menu.php:229
+msgid "w"
+msgstr "нед"
+
+#: lib/class.mi_booking_menu.php:244
+msgid "Settings saved."
+msgstr "Настройки сохранены."
+
+#: lib/class.mi_booking_menu.php:254
+msgid "Update error."
+msgstr "Ошибка обновления."
+
+#: lib/class.mi_booking_menu.php:267 lib/class.mi_booking_menu.php:363
+msgid "Successful delete."
+msgstr "Успешно удалено."
+
+#: lib/class.mi_booking_menu.php:275 lib/class.mi_booking_menu.php:371
+msgid "Error removing."
+msgstr "Ошибка удаления."
+
+#: lib/class.mi_booking_menu.php:288
+msgid "Template save."
+msgstr "Шаблон сохранен."
+
+#: lib/class.mi_booking_menu.php:298 lib/class.mi_booking_menu.php:321
+#: lib/class.mi_booking_menu.php:344
+msgid "Saving error."
+msgstr "Ошибка сохранения."
+
+#: lib/class.mi_booking_menu.php:311
+msgid "Holiday template saved."
+msgstr "Шаблон праздников сохранен."
+
+#: lib/class.mi_booking_menu.php:334
+msgid "Room save."
+msgstr "Комната сохранена."
+
+#: lib/class.mi_booking_menu.php:378
+msgid "Room settings page"
+msgstr "Страница настройки комнаты"
+
+#: lib/class.mi_booking_menu.php:382
+msgid "Add room"
+msgstr "Добавить комнату"
+
+#: lib/class.mi_booking_menu.php:388
+msgid "Room name"
+msgstr "Имя комнаты"
+
+#: lib/class.mi_booking_menu.php:392
+msgid "Display days"
+msgstr "Отображать дней"
+
+#: lib/class.mi_booking_menu.php:396 lib/class.mi_booking_settings.php:24
+msgid "Show city"
+msgstr "Показывать город"
+
+#: lib/class.mi_booking_menu.php:399 lib/class.mi_booking_menu.php:487
+#: lib/class.mi_booking_menu.php:500
+msgid "Save"
+msgstr "Сохранить"
+
+#: lib/class.mi_booking_menu.php:406
+msgid "Change room"
+msgstr "Изменить комнату"
+
+#: lib/class.mi_booking_menu.php:427
+msgid "Room shortcode"
+msgstr "Шорткод комнаты"
+
+#: lib/class.mi_booking_menu.php:439
+msgid "Delete?\\nAre You sure"
+msgstr "Удалить?\\nВы уверены"
+
+#: lib/class.mi_booking_menu.php:458
+msgid "Time template settings page"
+msgstr "Страница настройки шаблона времени"
+
+#: lib/class.mi_booking_menu.php:462
+msgid "Add time template"
+msgstr "Добавить шаблон времени"
+
+#: lib/class.mi_booking_menu.php:468
+msgid "Add date template"
+msgstr "Добавить шаблон даты"
+
+#: lib/class.mi_booking_menu.php:476
+msgid "Enter day abbreviation"
+msgstr "Введите метка дня"
+
+#: lib/class.mi_booking_menu.php:477 lib/class.mi_booking_settings.php:259
+msgid "Format: WD or F or WE or H"
+msgstr "Формат: WD или F или WE или H"
+
+#: lib/class.mi_booking_menu.php:480
+msgid "Enter time"
+msgstr "Введите время"
+
+#: lib/class.mi_booking_menu.php:481 lib/class.mi_booking_settings.php:264
+msgid "Format: HH:MM"
+msgstr "Формат: ЧЧ:ММ"
+
+#: lib/class.mi_booking_menu.php:484
+msgid "Enter cost"
+msgstr "Введите стоимость"
+
+#: lib/class.mi_booking_menu.php:485 lib/class.mi_booking_settings.php:270
+msgid "Format: 99999999.99"
+msgstr "Формат: 99999999.99"
+
+#: lib/class.mi_booking_menu.php:493
+msgid "Enter holiday date"
+msgstr "Введите дату празника"
+
+#: lib/class.mi_booking_menu.php:494
+msgid "Format: YYYY-MM-DD"
+msgstr "Формат: ГГГГ-ММ-ДД"
+
+#: lib/class.mi_booking_menu.php:494
+msgid "Format: MM-DD"
+msgstr "Формат: ММ-ДД"
+
+#: lib/class.mi_booking_menu.php:496
+msgid "Apply holiday for every year?"
+msgstr "Сделать праздник для каждого года."
+
+#: lib/class.mi_booking_menu.php:497
+msgid "Every year?"
+msgstr "Каждый год?"
+
+#: lib/class.mi_booking_menu.php:555
+msgid "Message settings page"
+msgstr "Страница настроек сообщений"
+
+#: lib/class.mi_booking_settings.php:22
+msgid "Change room name"
+msgstr "Изменить имя комнаты"
+
+#: lib/class.mi_booking_settings.php:23
+msgid "Change displayed days"
+msgstr "Изменить количество отображаемых дней"
+
+#: lib/class.mi_booking_settings.php:29
+msgid "To mark day, use abbreviations"
+msgstr "Чтобы обозначить день, используйте метки"
+
+#: lib/class.mi_booking_settings.php:30
+msgid "Weekday"
+msgstr "Будний"
+
+#: lib/class.mi_booking_settings.php:32
+msgid "Weekend"
+msgstr "Выходные"
+
+#: lib/class.mi_booking_settings.php:33
+msgid "Holidays"
+msgstr "Празники"
+
+#: lib/class.mi_booking_settings.php:34
+msgid "Setting a time table and the cost"
+msgstr "Настройки времени и стоимости"
+
+#: lib/class.mi_booking_settings.php:35
+msgid "Setting holidays"
+msgstr "Настройки праздников "
+
+#: lib/class.mi_booking_settings.php:40
+msgid "To add data, use"
+msgstr "Чтобы добавить данные, используйте"
+
+#: lib/class.mi_booking_settings.php:43
+msgid "Date, time"
+msgstr "Дата, время"
+
+#: lib/class.mi_booking_settings.php:46
+msgid "Use the character \"-\" at the beginning and the end."
+msgstr "Используйте символ \"-\" в начале и конце."
+
+#: lib/class.mi_booking_settings.php:47
+msgid "Messages to customer"
+msgstr "Сообщения клиентам"
+
+#: lib/class.mi_booking_settings.php:48
+msgid "Successful booking message"
+msgstr "Сообщение при успешном бронировании"
+
+#: lib/class.mi_booking_settings.php:49
+msgid "Invalid email message"
+msgstr "Сообщение при неверном и-мейле"
+
+#: lib/class.mi_booking_settings.php:50
+msgid "Invalid phone message"
+msgstr "Сообщение при неверном телефоне"
+
+#: lib/class.mi_booking_settings.php:51
+msgid "Admin Email"
+msgstr "И-мейл администратора"
+
+#: lib/class.mi_booking_settings.php:52
+msgid "Subject: Confirm"
+msgstr "Тема: Подтверждение"
+
+#: lib/class.mi_booking_settings.php:53
+msgid "Subject: Cancel and Delete"
+msgstr "Тема: Отмена и удаление"
+
+#: lib/class.mi_booking_settings.php:78
+msgid "Empty name of room or not valid displayed days!"
+msgstr "Пустые имя или количество отображаемых дней!"
+
+#: lib/class.mi_booking_settings.php:177
+msgid "Holidays templates already exist!"
+msgstr "Шаблон праздников уже существует!"
+
+#: lib/class.mi_booking_settings.php:184
+msgid "Some not valid holidays values!"
+msgstr "Не верные значения праздников!"
+
+#: lib/class.mi_booking_settings.php:249
+msgid "Description"
+msgstr "Описание"
+
+#: lib/class.mi_booking_settings.php:251
+msgid "Cost"
+msgstr "Стоимость"
+
+#: lib/class.mi_booking_settings.php:285
+msgid ""
+"There are no time template for current room!<br>Add some, using \"Add time "
+"template\" button."
+msgstr ""
+"Нет шаблона времени для этой комнаты!<br>Добавьте, используя кнопку "
+"\"Добавит шаблон времени\"."
+
+#: lib/class.mi_booking_settings.php:300
+msgid "Format: "
+msgstr "Формат:"
+
+#: lib/class.mi_booking_settings.php:301
+msgid "Unique year?"
+msgstr "Уникальный год?"
+
+#: lib/class.mi_booking_settings.php:310
+msgid "The message template when booking confirmed."
+msgstr "Шаблон сообщения при подтверждении бронирования."
+
+#: lib/class.mi_booking_settings.php:319
+msgid "The message template when booking canceled."
+msgstr "Шаблон сообщения при отмене бронирования."
