@@ -491,7 +491,7 @@ if (!class_exists('MI_Booking_Menu'))
                     <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>?page=mi_booking_time_template" id="add-date-tamplates-form">
                         <div class="time-holiday form-group">
                             <label for="mi_booking_date_input"><?php echo __('Enter holiday date', 'mi_booking') ?></label>
-                            <input title="<?php echo __('Format: YYYY-MM-DD', 'mi_booking') ?>" type="text" data-format-uniq="<?php echo __('Format: YYYY-MM-DD', 'mi_booking') ?>" data-format-ununiq="<?php echo __('Format: MM-DD', 'mi_booking') ?>" name="mi_booking_date_input" class="form-control" id="mi_booking_date_input" data-timeformated="1920-01-01" value="<?php echo date(get_option( 'date_format' ), mktime(0, 0, 0, 1, 1, 1920)) ?>">
+                            <input title="<?php echo __('Format: YYYY-MM-DD', 'mi_booking') ?>" type="text" data-format-uniq="<?php echo __('Format: YYYY-MM-DD', 'mi_booking') ?>" data-format-ununiq="<?php echo __('Format: MM-DD', 'mi_booking') ?>" name="mi_booking_date_input" class="form-control" id="mi_booking_date_input" data-timeformated="<?php echo date( 'Y-m-d', time()) ?>" value="<?php echo date(get_option( 'date_format' ), time()) ?>">
                         </div>
                         <div class="form-group iphone-checkbox" title="<?php echo __('Apply holiday for every year?', 'mi_booking') ?>">
                             <label for="date-every-year"><?php echo __('Every year?', 'mi_booking') ?></label>

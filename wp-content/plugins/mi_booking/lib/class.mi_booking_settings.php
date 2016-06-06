@@ -114,8 +114,8 @@ if (!class_exists('MI_Booking_Settings'))
                         && (!empty($value['what_day']) 
                         && in_array(strtoupper($value['what_day']), $allowed_what_day)) 
                         && (
-                                preg_match('/^([0-2]){1}([0-3]){1}:([0-5]){1}([0-9]){1}:([0-5]){1}([0-9]){1}$/i', $value['time']) 
-                                ||  preg_match('/^([0-2]){1}([0-3]){1}:([0-5]){1}([0-9]){1}$/i', $value['time'])
+								 preg_match('/^([0-9]|0[0-9]|1[0-9]|2[0-3]):([0-5]){1}([0-9]){1}:([0-5]){1}([0-9]){1}$/i', $value['time']) 
+								||  preg_match('/^([0-9]|0[0-9]|1[0-9]|2[0-3]):([0-5]){1}([0-9]){1}$/i', $value['time'])
                         )
                 )
                 {
@@ -148,43 +148,45 @@ if (!class_exists('MI_Booking_Settings'))
                     $this->mi_update();
                 }
             }
-            foreach ($input['time_holiday'] as $key=>$value)
-            {
-                $date = date('Y-m-d', strtotime($value));
-                if(
-                    !empty($date) 
-                    && preg_match('/(19|20)\d\d-((0[1-9]|1[012])-(0[1-9]|[12]\d)|(0[13-9]|1[012])-30|(0[1-9]|1[0-2])-31)/i', $date)
-                )
-                {
-                    $unique_time_holiday = $wpdb->query("SELECT id FROM $this->table_of_holidays WHERE date_of_holiday='$date' AND id!=$key;");
-                    if(!$unique_time_holiday)
-                    {
-                        $show_city = (isset($input['date_every_year'][$key]))? 1 : 0;
-                        $wpdb->update(
-                                $this->table_of_holidays,
-                                array(
-                                        'date_of_holiday'  => $date,
-                                        'ununique'         => $show_city,
-                                    ),
-                                array('id' => $key),
-                                array('%s', '%d'),
-                                array('%d')
-                            );
-                    }
-                    else
-                    {
-                        $this->mi_booking['update_error']['state'] = true;
-                        $this->mi_booking['update_error']['problem'][2] = '<span class="problem">'. __('Holidays templates already exist!', 'mi_booking') .'</span>';
-                        $this->mi_update();
-                    }
-                }
-                else
-                {
-                    $this->mi_booking['update_error']['state'] = true;
-                    $this->mi_booking['update_error']['problem'][3] = '<span class="problem">'. __('Some not valid holidays values!', 'mi_booking') .'</span>';
-                    $this->mi_update();
-                }
-            }
+			if( !empty( $input['time_holiday']  ) ){
+				foreach ($input['time_holiday'] as $key=>$value){
+					$date = date('Y-m-d', strtotime($value));
+					if(
+						!empty($date) 
+						&& preg_match('/(19|20)\d\d-((0[1-9]|1[012])-(0[1-9]|[12]\d)|(0[13-9]|1[012])-30|(0[1-9]|1[0-2])-31)/i', $date)
+					)
+					{
+						$unique_time_holiday = $wpdb->query("SELECT id FROM $this->table_of_holidays WHERE date_of_holiday='$date' AND id!=$key;");
+						if(!$unique_time_holiday)
+						{
+							$show_city = (isset($input['date_every_year'][$key]))? 1 : 0;
+							$wpdb->update(
+									$this->table_of_holidays,
+									array(
+											'date_of_holiday'  => $date,
+											'ununique'         => $show_city,
+										),
+									array('id' => $key),
+									array('%s', '%d'),
+									array('%d')
+								);
+						}
+						else
+						{
+							$this->mi_booking['update_error']['state'] = true;
+							$this->mi_booking['update_error']['problem'][2] = '<span class="problem">'. __('Holidays templates already exist!', 'mi_booking') .'</span>';
+							$this->mi_update();
+						}
+					}
+					else
+					{
+						$this->mi_booking['update_error']['state'] = true;
+						$this->mi_booking['update_error']['problem'][3] = '<span class="problem">'. __('Some not valid holidays values!', 'mi_booking') .'</span>';
+						$this->mi_update();
+					}
+				}
+				
+			}
         }
         public function save_message($input) {
             $this->mi_booking['tamplate_confirmation']    = $input['confirm'];
@@ -196,6 +198,7 @@ if (!class_exists('MI_Booking_Settings'))
             $this->mi_booking['subject_confirm']          = $input['subject_confirm'];
             $this->mi_booking['subject_cancel_delete']    = $input['subject_cancel_delete'];
             $this->mi_update();
+			return $input;
         }
         /*-----End save all settings--------*/
         /*-----------Room settings----------*/

@@ -54,7 +54,7 @@ if (!class_exists('MI_Booking_Front'))
 						$timestamp = mktime(0, 0, 0, $i, $day, $year);
 						list($month_name, $days_in_month) = explode('-', date('F-t', $timestamp));
 						$res_now_month = $this->now_month($month++);
-
+						$get_month_count = 0;
 						if ($number_of_days_add_now_day <= $days_in_month) {
 							$end_of_calendar = false;
 							$days_in_month = $number_of_days_add_now_day;
