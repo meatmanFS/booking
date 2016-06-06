@@ -167,8 +167,8 @@ if (!class_exists('MI_Booking'))
                     && (!empty($mi_booking_what_day_input) 
                     && in_array(strtoupper($mi_booking_what_day_input), $allowed_what_day)) 
                     && (
-                            preg_match('/^([0-2]){1}([0-3]){1}:([0-5]){1}([0-9]){1}:([0-5]){1}([0-9]){1}$/i', $mi_booking_time_input) 
-                            ||  preg_match('/^([0-2]){1}([0-3]){1}:([0-5]){1}([0-9]){1}$/i', $mi_booking_time_input)
+                            preg_match('/^([0-9]|0[0-9]|1[0-9]|2[0-3]):([0-5]){1}([0-9]){1}:([0-5]){1}([0-9]){1}$/i', $mi_booking_time_input) 
+                            ||  preg_match('/^([0-9]|0[0-9]|1[0-9]|2[0-3]):([0-5]){1}([0-9]){1}$/i', $mi_booking_time_input)
                     )
                 )
                 {
@@ -208,7 +208,8 @@ if (!class_exists('MI_Booking'))
             $date_tamplates_save = filter_input(INPUT_POST, 'date_tamplates_save', FILTER_SANITIZE_SPECIAL_CHARS); //date_tamplates_save
             if(isset($date_tamplates_save))
             {
-                $mi_booking_date_input = date('Y-m-d', strtotime(filter_input(INPUT_POST, 'mi_booking_date_input', FILTER_SANITIZE_SPECIAL_CHARS)));;//mi_booking_date_input
+            	$mi_booking_date_input = filter_input(INPUT_POST, 'mi_booking_date_input', FILTER_SANITIZE_SPECIAL_CHARS);  
+                $mi_booking_date_input = date('Y-m-d', strtotime( $mi_booking_date_input ) );//mi_booking_date_input
                 $date_every_year = (isset($_REQUEST['date_every_year']))? 1:0; //date_every_year
                 if(preg_match('/^(19|20)\d\d-((0[1-9]|1[012])-(0[1-9]|[12]\d)|(0[13-9]|1[012])-30|(0[1-9]|1[0-2])-31)$/i', $mi_booking_date_input))
                 {
